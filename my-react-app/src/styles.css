@@ -1,0 +1,32 @@
+/* style login page */
+.form_registration {
+    width: 300px;
+    margin-left: 20px;
+  }
+  
+  .title_label {
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .input_field {
+    width: 80%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+    
+  }
+  .submit_button {
+    width: 280px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #8280f6;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    font-family: 'Orbitron', sans-serif;
+  }
