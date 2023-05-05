@@ -3,14 +3,46 @@ import { useState, useEffect  } from "react";
 
 export function Login() {
   const [user, setUser] = useState({ username: "", password: ""});
+  
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response=> response.json())
-    .then(json =>console.log(json))
+  async function handleSubmit (event) {
+   //  let users_list;
+     event.preventDefault();
+     const response = await fetch('https://jsonplaceholder.typicode.com/users');
+     const users_list = await response.json();
+    
+   //   console.log(users_list)
+   
+    // users_list=fetch('https://jsonplaceholder.typicode.com/users')
+    // .then(response=> {return response.json()})
+    // .then(json =>{return json})
+    if(users_list!=null){
+      let i;
+     for(i=0;i<users_list.length; i++){
+      if(users_list[i].username==user.username)
+      {
+        if(users_list[i].address.geo.lat.slice(-4)==user.password)
+        {
+          alert("good user")
+          localStorage.setItem(user.username,JSON.stringify(user)) //  Maybe put all user information from rest api
+          setUser({ username: "", password:"" });
+          return;
+         // break
+        }
+        else{
+          alert("error in password")
+          return;
+        }
+      }
+     }
 
-    setUser({ username: "", password:"" });
+     if(i==users_list.length){
+      alert("username not found")
+     }
+    
+    }
+
+   
   };
   // useEffect(() => {
   //   console.log("salut")
