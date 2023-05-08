@@ -1,5 +1,72 @@
+import { useState , useEffect} from "react";
+import { useNavigate } from "react-router-dom";
+
 export function Main() {
-    return <h1>Main</h1>;
+  const user = JSON.parse(localStorage.getItem('currentUser'));
+  const [current_user, setCurrentUser] = useState(user);
+  const [resourceType, setResourceType]=useState('')
+  const [showInfos, setShowInfos]=useState(false)
+  const[items, setItems]= useState([])
+  const navigate = useNavigate();
+
+  async function fetchData(){
+    if(resourceType!=''){
+      const response = await fetch(`https://jsonplaceholder.typicode.com/${resourceType}`);
+      const json = await response.json();
+      setItems(json)
+    }
+ 
+
+  }
+  useEffect( ()=> {
+    fetchData();
+    // fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+    // .then(response =>response.json())
+    // .then(json =>setItems(json));
+    // const response = await fetch(`https://jsonplaceholder.typicode.com/${resourceType}`);
+    // const list = await response.json();
+
+  }, [resourceType])
+  
+  function Logout(){
+   
+    navigate("/login")
+    localStorage.removeItem('currentUser');
+
+  }
+
+
+    return (
+      <div>
+        <p>Hello {current_user.name}</p> 
+        <div>
+          <button onClick={()=>setResourceType('albums')}>Albums</button>
+          <button onClick={()=>setResourceType('posts')}>Posts</button>
+          <button onClick={()=>setResourceType('todos')}>Todos</button>
+          <button onClick={()=>setShowInfos(!showInfos)}>Infos</button>
+          <button onClick={Logout}>Logout</button>
+          {showInfos ? <div>
+            <p>Your infos</p>
+            <p>username: {current_user.username}</p>
+            <p>email: {current_user.email}</p>
+            <p>address:</p>
+            <p>street: {current_user.address.street}</p>
+            <p>suite: {current_user.address.suite}</p>
+            <p>city: {current_user.address.city}</p>
+            <p>zipcode: {current_user.address.zipcode}</p>
+            <p>geolocalation: {current_user.address.geo.lat}, {current_user.address.geo.lng}</p>
+            <p>phone: {current_user.phone}</p>
+            <p>website: {current_user.website}</p>
+            <p>company: </p>
+            <p>name: {current_user.company.name}</p>
+            <p>catchphrase: {current_user.company.catchPhrase}</p>
+            <p>bs: {current_user.company.bs}</p>
+          </div> : null}
+           {items.map((item, index) =>{return <pre key={index}>{JSON.stringify(item)}</pre>})}
+          
+        </div>
+      </div>
+    );
   };
   
   //export default Main;

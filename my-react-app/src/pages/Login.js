@@ -1,9 +1,10 @@
 import "../styles.css"
 import { useState, useEffect  } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
   const [user, setUser] = useState({ username: "", password: ""});
-  
+  const navigate = useNavigate();
 
   async function handleSubmit (event) {
    //  let users_list;
@@ -24,8 +25,9 @@ export function Login() {
         if(users_list[i].address.geo.lat.slice(-4)==user.password)
         {
           alert("good user")
-          localStorage.setItem(user.username,JSON.stringify(user)) //  Maybe put all user information from rest api
+          localStorage.setItem("currentUser",JSON.stringify(users_list[i])) //  Maybe put all user information from rest api
           setUser({ username: "", password:"" });
+          navigate("/main")
           return;
          // break
         }
@@ -38,6 +40,7 @@ export function Login() {
 
      if(i==users_list.length){
       alert("username not found")
+      setUser({ username: "", password:"" });
      }
     
     }
