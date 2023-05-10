@@ -27,7 +27,7 @@ export function Login() {
           alert("good user")
           localStorage.setItem("currentUser",JSON.stringify(users_list[i])) //  Maybe put all user information from rest api
           setUser({ username: "", password:"" });
-          navigate("/main")
+          navigate(`/users/${users_list[i].id}`)
           return;
          // break
         }
