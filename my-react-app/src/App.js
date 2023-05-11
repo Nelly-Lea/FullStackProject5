@@ -10,7 +10,7 @@ import { Users } from "./pages/Users";
 import { Albums } from "./pages/Albums";
 import {Posts} from "./pages/Posts"
 import { Todos } from "./pages/Todos";
-
+import { Comments } from "./pages/Comments";
 
 
 function App() {
@@ -25,9 +25,10 @@ function App() {
           <Route path="users/:id" element={<Users />}>
              <Route path="infos" element={<Infos/>}/>
              <Route path="albums" element={<Albums/>}/>
-             <Route path="posts" element={<Posts/>}></Route>
-               {/* <Route path=":postId" element={<Posts/>} />
-              </Route> */}
+             <Route path="posts" element={<Posts/>}>
+              <Route path=":postId/comments"  element={<Comments/>}/>
+              </Route>
+              <Route path="posts/:postId" element={<Posts/>} />
              <Route path="todos" element={<Todos/>}/>
           </Route>
          {/* <Route path="users" element={<Main />} /> */}
