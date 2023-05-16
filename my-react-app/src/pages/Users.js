@@ -18,6 +18,7 @@ export function Users (){
       const response = await fetch(`https://jsonplaceholder.typicode.com/${resourceType}`);
       const json = await response.json();
       setItems(json)
+   
     }
  
 

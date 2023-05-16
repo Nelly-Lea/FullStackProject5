@@ -11,7 +11,7 @@ import { Albums } from "./pages/Albums";
 import {Posts} from "./pages/Posts"
 import { Todos } from "./pages/Todos";
 import { Comments } from "./pages/Comments";
-
+import { Photos } from "./pages/Photos";
 
 function App() {
   // const user = JSON.parse(localStorage.getItem('currentUser'));
@@ -24,7 +24,9 @@ function App() {
             
           <Route path="users/:id" element={<Users />}>
              <Route path="infos" element={<Infos/>}/>
-             <Route path="albums" element={<Albums/>}/>
+             <Route path="albums" element={<Albums/>}>
+              <Route path=":albumsId/photos"  element={<Photos/>}/>
+               </Route> 
              <Route path="posts" element={<Posts/>}>
               <Route path=":postId/comments"  element={<Comments/>}/>
               </Route>

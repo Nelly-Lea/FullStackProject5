@@ -10,7 +10,9 @@ export function Posts (){
     const [current_postid, setCurrentPostId] = useState('');
     const [isBold, setBold] = useState(false);
     const [currentBold, setCurrentBold] = useState('');
-    
+    //  const[showComments, setShowComments]=useState(false)
+    // const[prevPostId, setprevPostId]=useState('')
+
   const navigate = useNavigate();
  //   const [current_post_id, setCurrentPost] = useState('');
     //console.log(items)
@@ -22,7 +24,12 @@ export function Posts (){
     // }
     function Show_Comments(post_id){
         navigate(`/users/${current_user.id}/posts/${post_id}/comments`)
+        // if(current_postid!=''){
+        //     setprevPostId(current_postid)
+        // }
         setCurrentPostId(post_id)
+       // setShowComments(!showComments)
+
     }
     function Bold(id){
         setCurrentBold(id)
