@@ -1,10 +1,21 @@
 /* style login page */
-body {
-  background-image: url("2023-05-16.png");
+.background {
+  background: url("./images/background1.jpg") ; 
+  /* background-color:  rebeccapurple; */
+ 
+}
+
+.login{
+  color: white;
+  
 }
 .form_registration {
     width: 300px;
-    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 15%;
+    
   }
   
   .title_label {
@@ -32,4 +43,9 @@ body {
     font-size: 18px;
     border-radius: 20px;
     font-family: 'Orbitron', sans-serif;
+  }
+
+  /*style of user page*/
+  .font_color{
+    color: white;
   }

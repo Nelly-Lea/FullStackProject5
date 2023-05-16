@@ -57,7 +57,7 @@ export function Login() {
   // }, [user]);
   
     return(
-      <div >
+      <div className="login" >
       <form className='form_registration' onSubmit={handleSubmit} > 
           <label className='title_label'>
               Username: 

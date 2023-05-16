@@ -40,13 +40,13 @@ export function Users (){
     localStorage.removeItem('currentUser');
 
   }
-    return ( <EssaiContext.Provider value={items}> <div>  <p>Hello {current_user.name}</p>
+    return ( <EssaiContext.Provider value={items}> <div>  <p className='font_color'>Hello {current_user.name}</p>
     <nav>
       <ul>
-      <li><Link to="albums" onClick={()=>setResourceType('albums')}>Albums</Link></li>
-      <li><Link to="posts"  onClick={()=>setResourceType('posts')}>Posts</Link></li>
-      <li><Link to="todos"onClick={()=>setResourceType('todos')}>Todos</Link></li>
-      <li><Link to="infos" >Infos</Link></li>
+      <li><Link to="albums" className='font_color' onClick={()=>setResourceType('albums')}>Albums</Link></li>
+      <li><Link to="posts" className='font_color'  onClick={()=>setResourceType('posts')}>Posts</Link></li>
+      <li><Link to="todos"className='font_color' onClick={()=>setResourceType('todos')}>Todos</Link></li>
+      <li><Link to="infos"className='font_color' >Infos</Link></li>
       <li><button onClick={Logout}>Logout</button></li>
       </ul>
     </nav>
