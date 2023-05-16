@@ -1,4 +1,7 @@
 /* style login page */
+body {
+  background-image: url("2023-05-16.png");
+}
 .form_registration {
     width: 300px;
     margin-left: 20px;

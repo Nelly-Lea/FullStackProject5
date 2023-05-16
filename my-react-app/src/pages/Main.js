@@ -1,3 +1,4 @@
+import './main.css';
 import { useState , useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -36,37 +37,23 @@ export function Main() {
   }
 
 
-    return (
-      <div>
-        <p>Hello {current_user.name}</p> 
-        <div>
-          <button onClick={()=>setResourceType('albums')}>Albums</button>
-          <button onClick={()=>setResourceType('posts')}>Posts</button>
-          <button onClick={()=>setResourceType('todos')}>Todos</button>
-          <button onClick={()=>setShowInfos(!showInfos)}>Infos</button>
-          <button onClick={Logout}>Logout</button>
-          {showInfos ? <div>
+  return (
+    <div className="menu-container">
+      <p>Hello {current_user.name}</p> 
+      <div className="button-container">
+        <button onClick={() => setResourceType('albums')}>Albums</button>
+        <button onClick={() => setResourceType('posts')}>Posts</button>
+        <button onClick={() => setResourceType('todos')}>Todos</button>
+        <button onClick={() => setShowInfos(!showInfos)}>Infos</button>
+        <button onClick={Logout}>Logout</button>
+        {showInfos ? (
+          <div className="info-container">
             <p>Your infos</p>
-            <p>username: {current_user.username}</p>
-            <p>email: {current_user.email}</p>
-            <p>address:</p>
-            <p>street: {current_user.address.street}</p>
-            <p>suite: {current_user.address.suite}</p>
-            <p>city: {current_user.address.city}</p>
-            <p>zipcode: {current_user.address.zipcode}</p>
-            <p>geolocalation: {current_user.address.geo.lat}, {current_user.address.geo.lng}</p>
-            <p>phone: {current_user.phone}</p>
-            <p>website: {current_user.website}</p>
-            <p>company: </p>
-            <p>name: {current_user.company.name}</p>
-            <p>catchphrase: {current_user.company.catchPhrase}</p>
-            <p>bs: {current_user.company.bs}</p>
-          </div> : null}
-           {items.map((item, index) =>{return <pre key={index}>{JSON.stringify(item)}</pre>})}
-          
-        </div>
+            {/* Info details */}
+          </div>
+        ) : null}
+        {/* Other content */}
       </div>
-    );
-  };
-  
-  //export default Main;
+    </div>
+  );
+}  
