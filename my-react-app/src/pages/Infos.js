@@ -4,11 +4,11 @@ export function Infos (){
   const user = JSON.parse(localStorage.getItem('currentUser'));
   const [current_user, setCurrentUser] = useState(user);
     return (
-      <div>
-            <p>Your infos</p>
+      <div className="info_div">
+            <p className="info_title">Your infos</p>
             <p>username: {current_user.username}</p>
             <p>email: {current_user.email}</p>
-            <p>address:</p>
+            <p className="infos_title">Address</p>
             <p>street: {current_user.address.street}</p>
             <p>suite: {current_user.address.suite}</p>
             <p>city: {current_user.address.city}</p>
@@ -16,7 +16,7 @@ export function Infos (){
             <p>geolocalation: {current_user.address.geo.lat}, {current_user.address.geo.lng}</p>
             <p>phone: {current_user.phone}</p>
             <p>website: {current_user.website}</p>
-            <p>company: </p>
+            <p  className="infos_title">Company </p>
             <p>name: {current_user.company.name}</p>
             <p>catchphrase: {current_user.company.catchPhrase}</p>
             <p>bs: {current_user.company.bs}</p>

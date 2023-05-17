@@ -40,14 +40,14 @@ export function Users (){
     localStorage.removeItem('currentUser');
 
   }
-    return ( <EssaiContext.Provider value={items}> <div>  <p className='font_color'>Hello {current_user.name}</p>
-    <nav>
-      <ul>
-      <li><Link to="albums" className='font_color' onClick={()=>setResourceType('albums')}>Albums</Link></li>
-      <li><Link to="posts" className='font_color'  onClick={()=>setResourceType('posts')}>Posts</Link></li>
-      <li><Link to="todos"className='font_color' onClick={()=>setResourceType('todos')}>Todos</Link></li>
-      <li><Link to="infos"className='font_color' >Infos</Link></li>
-      <li><button onClick={Logout}>Logout</button></li>
+    return ( <EssaiContext.Provider value={items}> <div>  <p className='font_color hello_name'>Hello {current_user.name}</p>
+    <nav className='navbarul '>
+      <ul className='navul'>
+      <li className='navli'><Link  to="albums" className='font_color navLink' onClick={()=>setResourceType('albums')}>Albums</Link></li>
+      <li className='navli'><Link to="posts" className='font_color navLink'  onClick={()=>setResourceType('posts')}>Posts</Link></li>
+      <li className='navli'><Link to="todos"className='font_color navLink' onClick={()=>setResourceType('todos')}>Todos</Link></li>
+      <li className='navli'><Link to="infos"className='font_color navLink' >Infos</Link></li>
+      <li><button className='logout_button' onClick={Logout}>Logout</button></li>
       </ul>
     </nav>
    

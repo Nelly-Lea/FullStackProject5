@@ -2,6 +2,8 @@
 .background {
   background: url("./images/background1.jpg") ; 
   /* background-color:  rebeccapurple; */
+  margin: 0px;
+  background-size:100% 100%;
  
 }
 
@@ -48,4 +50,87 @@
   /*style of user page*/
   .font_color{
     color: white;
+  }
+
+  .hello_name{
+    font-family: 'Chewy', cursive;
+  }
+
+  .navul{
+    list-style-type: none;
+  }
+  .navLink { 
+    float: left; 
+    font-size: 20px; 
+    color:white; 
+    text-align: center; 
+    padding: auto; 
+    text-decoration: none; 
+    /* font-family: 'Orbitron', sans-serif; */
+    font-family: 'Chewy', cursive;
+    display: block; 
+    text-align: center; 
+    padding-right:  16px; 
+    padding-left: 16px; 
+    text-decoration: none; 
+  } 
+   
+  .navbarul { 
+    list-style-type: none; 
+    margin: 15; 
+    padding: 0; 
+    overflow: hidden; 
+  } 
+   
+  .navli { 
+    float: left; 
+    padding-left: 10px; 
+    padding-right: 10px; 
+  } 
+   
+  /* .navLink { 
+    display: block; 
+    text-align: center; 
+    padding-right:  16px; 
+    padding-left: 16px; 
+    text-decoration: none; 
+  } 
+    */
+  .navLink:hover { 
+    background-color: rgb(189, 185, 200); 
+    border-radius: 25px; 
+  } 
+
+  .logout_button{
+    font-family: 'Chewy', cursive;
+  }
+
+  /*Info page styles*/
+
+  .info_title{
+    background-color: rgb(143, 189, 232); 
+    border-radius: 25px; 
+  }
+  .info_div{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Chewy', cursive;
+    display: block; 
+    text-align: center; 
+    margin: auto;
+  }
+
+  .infos_title{
+    background-color: rgb(189, 185, 200); 
+    border-radius: 25px; 
+
+  }
+
+  /*post page style*/
+
+  .post_div{
+    background-color: white;
+    border-radius: 5px; 
   }
