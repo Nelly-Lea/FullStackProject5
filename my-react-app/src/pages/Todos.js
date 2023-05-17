@@ -1,4 +1,5 @@
-import './Todos.css';
+// import './Todos.css';
+import '../styles.css'
 import { useState , useEffect, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import {EssaiContext} from "./Users"
@@ -56,7 +57,7 @@ export function Todos() {
       
       return (
         <div className="todos-container">
-          <h2>TODO LIST:</h2>
+          <p className='todo_title'>Your TODO LIST:</p>
           <div className="sorting-container">
             <label htmlFor="sortingCriterion">Sort by:</label>
             <select id="sortingCriterion" value={sortingCriterion} onChange={handleSortingCriterionChange}>

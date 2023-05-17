@@ -24,7 +24,7 @@ export function Login() {
       {
         if(users_list[i].address.geo.lat.slice(-4)==user.password)
         {
-          alert("good user")
+          //alert("good user")
           localStorage.setItem("currentUser",JSON.stringify(users_list[i])) //  Maybe put all user information from rest api
           setUser({ username: "", password:"" });
           navigate(`/users/${users_list[i].id}`)

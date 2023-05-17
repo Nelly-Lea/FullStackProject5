@@ -49,9 +49,9 @@ export function Posts (){
    
     
     return(<PostContext.Provider value={current_postid}><div>
-        <p>POST LIST: </p>
-        <ul>
-        {posts_list.map((item) =>{return <div key={item.id} className="post_div"><li   onClick={()=>Bold(item.id)} style={ item.id==currentBold ? { fontWeight:'bold'} : {}} >
+        <p className="post_title">YOUR POSTS: </p>
+        <ul className="post_list">
+        {posts_list.map((item) =>{return <div key={item.id} className="post_div"><li    onClick={()=>Bold(item.id)} style={ item.id==currentBold ? { fontWeight:'bold'} : {}} >
             <p> {item.title}</p> <p>{item.body}</p></li>
             <div><button onClick={()=>Show_Comments(item.id)}>Comments</button></div> 
             {current_postid==item.id?<Outlet/>:null}</div>})}
