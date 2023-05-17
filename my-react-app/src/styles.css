@@ -1,14 +1,19 @@
 /* style login page */
 .background {
-  background: url("./images/background1.jpg") ; 
-  /* background-color:  rebeccapurple; */
+  background: url("./images/background1.jpg") no-repeat; 
+  
   margin: 0px;
-  background-size:100% 100%;
- 
+  background-size:cover;
+
+
 }
 
 .login{
   color: white;
+  /* background-color: rgb(30,144,255);
+  
+   padding-top: 2px;
+   padding-bottom: 10px;  */
   
 }
 .form_registration {
@@ -23,8 +28,8 @@
   .title_label {
     display: flex;
     margin-top: 20px;
-    font-size: 18px;
-    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    font-family: 'Chewy', cursive;
   }
   .input_field {
     width: 80%;
@@ -54,6 +59,8 @@
 
   .hello_name{
     font-family: 'Chewy', cursive;
+    margin-left: 50px;
+    font-size: 30px;
   }
 
   .navul{
@@ -110,6 +117,7 @@
   .info_title{
     background-color: rgb(143, 189, 232); 
     border-radius: 25px; 
+    font-size: 30px;
   }
   .info_div{
     width: 50%;
@@ -133,4 +141,77 @@
   .post_div{
     background-color: white;
     border-radius: 5px; 
+    font-family: 'Chewy', cursive;
+    padding: 10px;
+    margin: 5px;
+    border-style: solid;
+    border-color:  rgb(143, 189, 232);
   }
+
+  .post_list{
+    list-style-type: none;
+  }
+
+  .post_title{
+    font-family: 'Chewy', cursive;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    background-color: rgb(143, 189, 232); 
+    border-radius: 25px; 
+    width: 90%;
+   margin: auto;
+  }
+
+  /*style to do list*/
+  .todos-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  } */
+
+  .todo_title{
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-family: 'Chewy', cursive;
+    color: white;
+    background-color: rgb(143, 189, 232); 
+    border-radius: 25px; 
+    text-align: center;
+  }
+  
+  .sorting-container {
+    margin-bottom: 10px;
+    font-family: 'Chewy', cursive;
+    color: white;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  select {
+    padding: 5px;
+  }
+  
+  .todo-list {
+    list-style-type: none;
+    padding: 0;
+    font-family: 'Chewy', cursive;
+    color: white;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
