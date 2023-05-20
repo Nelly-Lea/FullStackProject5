@@ -1,14 +1,47 @@
-import { useState , useEffect, useContext} from "react";
-import { useNavigate } from "react-router-dom";
-import {EssaiContext} from "./Users"
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
+
 export function Photos (){
-    // const items=useContext(EssaiContext);//
-    // const user = JSON.parse(localStorage.getItem('currentUser'));
-    // const [current_user, setCurrentUser] = useState(user);
-    // const albums_list=items.filter(album=> album.userId==current_user.id)
-    //console.log(items)
-    return(<div>
-        <p>Photos</p>
-        
-    </div>)
-}
+    const [photos, setPhotos] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    const userid =user.id;
+    const { id } = useParams();
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      try {
+        fetch(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
+          .then((response) => response.json())
+          .then((data) => {
+            setPhotos(data);
+            setIsLoading(false);
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    }, [id]);
+  
+    const handleBackClick = () => {
+      navigate(`users/:${userid}/albums`);
+    };
+  
+    if (isLoading) {
+      return <h1>Loading...</h1>;
+    }
+  
+    return (
+      <div>
+        <button onClick={handleBackClick}>Back to Albums</button>
+        <div className="photo-list">
+          {photos.map((photo) => (
+            <div key={photo.id}>
+              <img src={photo.thumbnailUrl} alt={photo.title} />
+              <span>{photo.title}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
