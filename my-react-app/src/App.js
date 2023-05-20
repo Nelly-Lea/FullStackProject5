@@ -16,6 +16,7 @@ import { Photos } from "./pages/Photos";
 function App() {
   // const user = JSON.parse(localStorage.getItem('currentUser'));
   // const [current_user, setCurrentUser] = useState(user);
+  
   return (
       <Routes>
 
@@ -24,9 +25,9 @@ function App() {
             
           <Route path="users/:id" element={<Users />}>
              <Route path="infos" element={<Infos/>}/>
-             <Route path="albums" element={<Albums/>}>
-              <Route path=":albumsId/photos"  element={<Photos/>}/>
-               </Route> 
+             <Route path="albums" element={<Albums/>}/>
+              <Route path="albums/:albumId/photos"  element={<Photos/>}/>
+               {/* </Route>  */}
              <Route path="posts" element={<Posts/>}>
               <Route path=":postId/comments"  element={<Comments/>}/>
               </Route>
