@@ -2,6 +2,9 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { EssaiContext } from "./Users";
+import albumImage from "../images/image.jpg";
+
+import "./Albums.css"; // Import the CSS file for styling
 
 export function Albums() {
   const items = useContext(EssaiContext);
@@ -11,12 +14,15 @@ export function Albums() {
 
   return (
     <div>
-      <p>ALBUMS</p>
-      <ul>
+      <p className="albums-heading">ALBUMS</p>
+      <ul className="albums-list">
         {albums_list.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="album-item">
             <Link to={`/users/${current_user.id}/albums/${item.id}/photos`}>
-              <p>{item.title}</p>
+              <div className="album-thumbnail">
+                <img src={albumImage} alt={item.title} />
+              </div>
+              <p className="album-title">{item.title}</p>
             </Link>
           </li>
         ))}
